@@ -31,7 +31,9 @@ public class FiltrarElementos implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.to(CATEGORIA.of(categoria))
+                Click.on(CATEGORIA.of(categoria)),
+                WaitUntil.the(FILTER_BAR.of(categoria), isVisible()),
+                Scroll.to(DIV_PRIMER_ELEMENTO).andAlignToTop(),
         );
     }
 }
