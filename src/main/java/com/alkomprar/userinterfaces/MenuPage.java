@@ -15,7 +15,6 @@ public class MenuPage {
 	public static final Target SELECT_CHECK_BOX = Target.the("Seleccionar Comprar por {0} valor: {1}").locatedBy("//*[@for='chk_{0}_{1}']");
 	public static final Target FILTERED_ITEMS = Target.the("{0} Items filtrados").locatedBy("//ul[@class='product__listing product__list']/li");
 
-	
 
 }
  

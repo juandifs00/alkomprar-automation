@@ -27,7 +27,7 @@ public class FilterItemStepDefinitions {
     public void debeVerLaListaHastaConItems(int maxItem) {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(FILTERED_ITEMS, isVisible()),
-                Ensure.that(FILTERED_ITEMS).values().isLessThan(maxItem)
+                Ensure.that(FILTERED_ITEMS).values().hasSizeLessThan(maxItem)
         );
     }
 
