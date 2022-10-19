@@ -44,9 +44,10 @@ public class FiltrarElementos implements Task {
                 Click.on(CATEGORIA.of(categoria)),
                 WaitUntil.the(FILTER_BAR.of(categoria), isVisible()),
                 Scroll.to(SELECT_CHECK_BOX.of("brand", marca)).andAlignToTop(),
-                JavaScriptClick.on("#chk_brand_APPLE"),
-                Click.on(SELECT_CHECK_BOX.of("brand", marca)),
-                Click.on(SELECT_CHECK_BOX.of(caracteristica, valor))
+                JavaScriptClick.on(SELECT_CHECK_BOX.of("brand", marca)),
+                WaitUntil.the(SELECT_CHECK_BOX.of("brand", marca), isNotVisible())
+                //Click.on(SELECT_CHECK_BOX.of("brand", marca)),
+                //Click.on(SELECT_CHECK_BOX.of(caracteristica, valor))
         );
 
     }
