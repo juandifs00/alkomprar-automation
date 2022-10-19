@@ -9,7 +9,7 @@ Característica: Filter Items
     Entonces debe ver la lista hasta con 25 items
 
   Escenario: buscar productos por la barra de busqueda
-    Cuando "Rodolfo" quiere buscar productos "Samsung" y ordenarlos en un "Grid"
+    Cuando "Rodolfo" quiere buscar productos "SAMSUNG" y ordenarlos en un "Grid"
     Entonces debe ver una lista con productos en estilo "Grid"
 
   Escenario: Buscar horarios de atencion de una tienda Alkosto
