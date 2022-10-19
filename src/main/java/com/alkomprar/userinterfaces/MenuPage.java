@@ -11,6 +11,7 @@ public class MenuPage {
 	public static final Target CARRITO = Target.the("Primer subcategoria de {0}").locatedByFirstMatching("//a[@href='/cart']");
 	public static final Target TXT_BUSCAR = Target.the("Buscador").locatedByFirstMatching("//input[@name='text']");
 	public static final Target BUT_BUSCAR = Target.the("Boton Buscar").locatedBy("//button[@id='js-search-button']");
+	public static final Target FILTER_BAR = Target.the("Filtros para la categoria {0}").locatedBy("//div[@class='facet-container__list']");
 
 
 }
