@@ -31,7 +31,7 @@ public class FiltrarElementos implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.to(CATEGORIA.of(categoria))
+                Click.on(CATEGORIA.of(categoria))
         );
     }
 }

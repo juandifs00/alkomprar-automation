@@ -20,12 +20,12 @@ public class FilterItemStepDefinitions {
         // Write code here that turns the phrase above into concrete actions
         theActorCalled(actor).attemptsTo(
             Open.url("https://www.alkosto.com/"),
-            FiltrarElementos.elemento(categoria),
+            FiltrarElementos.elemento(categoria)
 
         );
     }
     @Entonces("debe ver la lista hasta con {int} items")
-    public void debeVerLaListaHastaConItems(Int maxItem) {
+    public void debeVerLaListaHastaConItems(int maxItem) {
         theActorInTheSpotlight().attemptsTo(
                 Click.on(CARRITO),
                 Ensure.that(ARTICULOS_CARRITO).values().hasSize(maxItem)
