@@ -14,4 +14,4 @@ Característica: Filter Items
 
   Escenario: Buscar horarios de atencion de una tienda Alkosto
     Cuando "Rodolfo" quiere Buscar los horarios de atencion en el "Alkosto Avenida 68" en "Bogota"
-    Entonces debe ver la lista hasta con "25" items
+    Entonces debe ver los horarios de atencion
