@@ -39,7 +39,6 @@ public class FiltrarElementos implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-
         actor.attemptsTo(
                 Click.on(CATEGORIA.of(categoria)),
                 WaitUntil.the(FILTER_BAR.of(categoria), isVisible()),
@@ -47,6 +46,5 @@ public class FiltrarElementos implements Task {
                 JavaScriptClick.on(SELECT_CHECK_BOX.of("brand", marca)),
                 JavaScriptClick.on(SELECT_CHECK_BOX.of(caracteristica, valor))
         );
-
     }
 }
