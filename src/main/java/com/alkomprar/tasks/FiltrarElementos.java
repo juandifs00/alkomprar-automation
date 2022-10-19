@@ -40,7 +40,6 @@ public class FiltrarElementos implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
 
-        System.setProperty("webdriver.chrome.driver", "path");
         WebDriver driver = new ChromeDriver();
         JavascriptExecutor js = (JavascriptExecutor)driver;
 
