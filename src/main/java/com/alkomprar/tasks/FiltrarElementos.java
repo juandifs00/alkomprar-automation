@@ -16,6 +16,10 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.JavascriptExecutor;
+
 public class FiltrarElementos implements Task {
     private String categoria;
     private String caracteristica;
@@ -35,12 +39,19 @@ public class FiltrarElementos implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+
+        System.setProperty("webdriver.chrome.driver", "path");
+        WebDriver driver = new ChromeDriver();
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+
         actor.attemptsTo(
                 Click.on(CATEGORIA.of(categoria)),
                 WaitUntil.the(FILTER_BAR.of(categoria), isVisible()),
                 Scroll.to(SELECT_CHECK_BOX.of("brand", marca)).andAlignToTop(),
                 Click.on(SELECT_CHECK_BOX.of("brand", marca)),
-                Click.on(SELECT_CHECK_BOX.of(caracteristica, valor))
+                Click.on(SELECT_CHECK_BOX.of(caracteristica, valor)),
+                js.executeScript("document.getElementById('js-add-cart-6934177767241').click();");
+                
         );
     }
 }
