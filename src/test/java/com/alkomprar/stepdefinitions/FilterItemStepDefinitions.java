@@ -1,6 +1,8 @@
 package com.alkomprar.stepdefinitions;
 
 import com.alkomprar.tasks.FiltrarElementos;
+import com.alkomprar.tasks.BuscarHorarios;
+import com.alkomprar.tasks.BuscarProductos;
 import com.alkomprar.tasks.BuscarYAgregarCarrito;
 import io.cucumber.java.ast.Cuando;
 import io.cucumber.java.es.Entonces;
@@ -33,6 +35,7 @@ public class FilterItemStepDefinitions {
                 Ensure.that(FILTERED_ITEMS).values().hasSizeLessThan(maxItem)
         );
     }
+
 
     @Cuando("{string} quiere buscar productos {string} y ordenarlos en un {string}")
     public void quiereBuscarProductosYOrdenarlosEnUn(String string, String string2, String string3) {
