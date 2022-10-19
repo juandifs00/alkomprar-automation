@@ -44,14 +44,18 @@ public class FiltrarElementos implements Task {
         WebDriver driver = new ChromeDriver();
         JavascriptExecutor js = (JavascriptExecutor)driver;
 
+        driver.get("https://www.alkosto.com/");
+
         actor.attemptsTo(
                 Click.on(CATEGORIA.of(categoria)),
                 WaitUntil.the(FILTER_BAR.of(categoria), isVisible()),
                 Scroll.to(SELECT_CHECK_BOX.of("brand", marca)).andAlignToTop(),
                 Click.on(SELECT_CHECK_BOX.of("brand", marca)),
                 Click.on(SELECT_CHECK_BOX.of(caracteristica, valor)),
-                js.executeScript("document.getElementById('js-add-cart-6934177767241').click();");
+                
                 
         );
+
+        js.executeScript("document.getElementById('js-add-cart-6934177767241').click();");
     }
 }
