@@ -31,14 +31,7 @@ public class FiltrarElementos implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                MoveMouse.to(CATEGORIA.of(categoria)),
-                WaitUntil.the(PRIMER_SUB_CATEGORIA.of(categoria), isVisible()),
-                Click.on(PRIMER_SUB_CATEGORIA.of(categoria)),
-                Scroll.to(DIV_PRIMER_ELEMENTO).andAlignToTop(),
-                WaitUntil.the(AGREGAR_ELEMENTO_CARRITO, isClickable()),
-                Click.on(AGREGAR_ELEMENTO_CARRITO),
-                WaitUntil.the(CERRAR_MODAL, isClickable()),
-                Click.on(CERRAR_MODAL)
+                Click.to(CATEGORIA.of(categoria))
         );
     }
 }

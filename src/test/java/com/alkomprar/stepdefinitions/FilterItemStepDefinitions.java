@@ -1,6 +1,6 @@
 package com.alkomprar.stepdefinitions;
 
-import com.alkomprar.tasks.AgregarAlCarrito;
+import com.alkomprar.tasks.FiltrarElementos;
 import com.alkomprar.tasks.BuscarYAgregarCarrito;
 import io.cucumber.java.ast.Cuando;
 import io.cucumber.java.es.Entonces;
@@ -20,16 +20,17 @@ public class FilterItemStepDefinitions {
         // Write code here that turns the phrase above into concrete actions
         theActorCalled(actor).attemptsTo(
             Open.url("https://www.alkosto.com/"),
+            FiltrarElementos.elemento(categoria),
 
         );
-        throw new io.cucumber.java.PendingException();
     }
-    @Entonces("debe ver la lista hasta con {string} items")
-    public void debeVerLaListaHastaConItems(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Entonces("debe ver la lista hasta con {int} items")
+    public void debeVerLaListaHastaConItems(Int maxItem) {
+        theActorInTheSpotlight().attemptsTo(
+                Click.on(CARRITO),
+                Ensure.that(ARTICULOS_CARRITO).values().hasSize(maxItem)
+        );
     }
-
 
     @Cuando("{string} quiere buscar productos {string} y ordenarlos en un {string}")
     public void quiereBuscarProductosYOrdenarlosEnUn(String string, String string2, String string3) {
