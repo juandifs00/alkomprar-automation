@@ -13,7 +13,9 @@ public class MenuPage {
 	public static final Target BUT_BUSCAR = Target.the("Boton Buscar").locatedBy("//button[@id='js-search-button']");
 	public static final Target FILTER_BAR = Target.the("Filtros para la categoria {0}").locatedBy("//div[@class='facet-container__list']");
 	public static final Target SELECT_CHECK_BOX = Target.the("Seleccionar Comprar por {0} valor: {1}").locatedBy("//*[@for='chk_{0}_{1}']");
+	public static final Target FILTERED_ITEMS = Target.the("{0} Items filtrados").locatedBy("//ul[@class='product__listing product__list']/li");
 
+	
 
 }
  

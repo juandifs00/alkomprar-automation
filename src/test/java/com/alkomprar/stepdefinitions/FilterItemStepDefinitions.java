@@ -21,14 +21,13 @@ public class FilterItemStepDefinitions {
         theActorCalled(actor).attemptsTo(
             Open.url("https://www.alkosto.com/"),
             FiltrarElementos.elemento(categoria, caracteristica, valorCaracteristica, marca)
-
         );
     }
     @Entonces("debe ver la lista hasta con {int} items")
     public void debeVerLaListaHastaConItems(int maxItem) {
         theActorInTheSpotlight().attemptsTo(
-                Click.on(CARRITO),
-                Ensure.that(ARTICULOS_CARRITO).values().hasSize(maxItem)
+                WaitUntil.the(FILTERED_ITEMS, isVisible()),
+                Ensure.that(FILTERED_ITEMS).values().isLessThan(maxItem)
         );
     }
 

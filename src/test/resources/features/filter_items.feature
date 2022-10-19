@@ -6,7 +6,7 @@ Característica: Filter Items
 
   Escenario: filtrar productos por caracteristicas en una determinada categoria
     Cuando "Rodolfo" quiere encontrar "Celulares" "SAMSUNG" con "8 GB" de "memoria-ram-celular"
-    Entonces debe ver la lista hasta con "100" items
+    Entonces debe ver la lista hasta con "25" items
 
   Escenario: buscar productos por la barra de busqueda
     Cuando "Rodolfo" quiere buscar productos "Samsung" y ordenarlos en un "Grid"
