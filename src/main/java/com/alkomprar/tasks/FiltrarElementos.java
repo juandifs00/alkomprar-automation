@@ -38,9 +38,9 @@ public class FiltrarElementos implements Task {
         actor.attemptsTo(
                 Click.on(CATEGORIA.of(categoria)),
                 WaitUntil.the(FILTER_BAR.of(categoria), isVisible()),
-                Scroll.to(SELECT_CHECK_BOX.of("brand", marca)).andAlignToTop(),
-                Click.on(SELECT_CHECK_BOX.of("brand", marca)),
-                Click.on(SELECT_CHECK_BOX.of(caracteristica, valor))
+                Scroll.to(SELECT_CHECK_BOX.of("brand", marca)[0]).andAlignToTop(),
+                Click.on(SELECT_CHECK_BOX.of("brand", marca)[0]),
+                Click.on(SELECT_CHECK_BOX.of(caracteristica, valor)[0])
         );
     }
 }
