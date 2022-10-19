@@ -18,13 +18,19 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 
 public class FiltrarElementos implements Task {
     private String categoria;
+    private String caracteristica;
+    private String valor;
+    private String marca;
 
-    public FiltrarElementos(String categoria) {
+    public FiltrarElementos(String categoria, String caracteristica, String valor, String marca) {
         this.categoria = categoria;
+        this.caracteristica = caracteristica;
+        this.valor = valor;
+        this.marca = marca;
     }
 
-    public static Performable elemento(String categoria) {
-        return instrumented(FiltrarElementos.class, categoria);
+    public static Performable elemento(String categoria, String caracteristica, String valor, String marca) {
+        return instrumented(FiltrarElementos.class, categoria, caracteristica, valor, marca);
     }
 
     @Override
@@ -32,6 +38,9 @@ public class FiltrarElementos implements Task {
         actor.attemptsTo(
                 Click.on(CATEGORIA.of(categoria)),
                 WaitUntil.the(FILTER_BAR.of(categoria), isVisible()),
-                Scroll.to(DIV_PRIMER_ELEMENTO).andAlignToTop());
+                Scroll.to(DIV_PRIMER_ELEMENTO).andAlignToTop()),
+                Click.on(SELECT_CHECK_BOX.of("brand", marca)),
+                Click.on(SELECT_CHECK_BOX.of(caracteristica, valor))
+                
     }
 }

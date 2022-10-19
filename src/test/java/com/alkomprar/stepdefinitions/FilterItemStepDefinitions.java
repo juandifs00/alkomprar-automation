@@ -20,7 +20,7 @@ public class FilterItemStepDefinitions {
         // Write code here that turns the phrase above into concrete actions
         theActorCalled(actor).attemptsTo(
             Open.url("https://www.alkosto.com/"),
-            FiltrarElementos.elemento(categoria)
+            FiltrarElementos.elemento(categoria, caracteristica, valorCaracteristica, marca)
 
         );
     }
