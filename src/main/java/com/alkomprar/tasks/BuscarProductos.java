@@ -32,8 +32,8 @@ public class BuscarProductos implements Task {
                 Type.theValue(marca).into(TXT_BUSCAR),
                 DoubleClick.on(TXT_BUSCAR),
                 Hit.the(Keys.ENTER).into(TXT_BUSCAR),
-                WaitUntil.the(LIST_CATEGORY.of(listType), isVisible()),
                 Scroll.to(LIST_CATEGORY.of(listType)).andAlignToTop(),
+                WaitUntil.the(LIST_CATEGORY.of(listType), isClickable()),
                 JavaScriptClick.on(LIST_CATEGORY.of(listType))
         );
 
