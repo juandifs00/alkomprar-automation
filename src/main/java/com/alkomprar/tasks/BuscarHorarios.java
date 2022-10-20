@@ -34,6 +34,9 @@ public class BuscarHorarios implements Task {
                 Click.on(LOCATIONS.of(tiendas)),
                 WaitUntil.the(CITIES_MENU, isVisible()),
                 Click.on(FILTRO_CIUDADES.of(ciudad))
+                Click.on(TIENDA_CARD.of(tiendas))
+                WaitUntil.the(TIENDA_DETALLE, isVisible()),
+                
         );
     }
 }
