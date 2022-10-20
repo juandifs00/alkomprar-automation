@@ -9,8 +9,7 @@ import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static com.alkomprar.userinterfaces.MenuPage.*;
-import static com.alkomprar.userinterfaces.NuestrasTiendasPage.CITIES_MENU;
-import static com.alkomprar.userinterfaces.NuestrasTiendasPage.FILTRO_CIUDADES;
+import static com.alkomprar.userinterfaces.NuestrasTiendasPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -33,10 +32,9 @@ public class BuscarHorarios implements Task {
         actor.attemptsTo(
                 Click.on(LOCATIONS.of(tiendas)),
                 WaitUntil.the(CITIES_MENU, isVisible()),
-                Click.on(FILTRO_CIUDADES.of(ciudad))
-                Click.on(TIENDA_CARD.of(tiendas))
-                WaitUntil.the(TIENDA_DETALLE, isVisible()),
-                
+                Click.on(FILTRO_CIUDADES.of(ciudad)),
+                Click.on(TIENDA_CARD.of(tiendas)),
+                WaitUntil.the(TIENDA_DETALLE, isVisible())
         );
     }
 }
