@@ -14,13 +14,15 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 
 public class BuscarHorarios implements Task {
     private String tiendas;
+    private String ciudad;
 
-    public BuscarHorarios(String tiendas) {
+    public BuscarHorarios(String tiendas, String ciudad) {
         this.tiendas = tiendas;
+        this.ciudad = ciudad;
     }
 
-    public static Performable elemento(String tiendas) {
-        return instrumented(BuscarHorarios.class, tiendas);
+    public static Performable elemento(String tiendas, String ciudad) {
+        return instrumented(BuscarHorarios.class, tiendas, ciudad);
     }
 
     @Override
@@ -28,7 +30,8 @@ public class BuscarHorarios implements Task {
 
         actor.attemptsTo(
                 Click.on(LOCATIONS.of(tiendas)),
-                WaitUntil.the(FILTER_BAR.of(tiendas), isVisible())
+                WaitUntil.the(CITIES_MENU, isVisible()),
+                Click.on(FILTRO_CIUDADES.of(ciudad))
         );
     }
 }

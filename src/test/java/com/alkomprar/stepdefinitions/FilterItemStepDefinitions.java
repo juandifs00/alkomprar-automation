@@ -51,10 +51,10 @@ public class FilterItemStepDefinitions {
 
 
     @Cuando("{string} quiere Buscar los horarios de atencion en el {string} en {string}")
-    public void quiereBuscarLosHorariosDeAtencionEnElEn(String actor, String tiendas) {
+    public void quiereBuscarLosHorariosDeAtencionEnElEn(String actor, String tienda, String ciudad) {
         theActorCalled(actor).attemptsTo(
                 Open.url("https://www.alkosto.com/"),
-                BuscarHorarios.elemento(tiendas)
+                BuscarHorarios.elemento(tienda, ciudad)
         );
     }
     @Entonces("debe ver los horarios de atencion")
