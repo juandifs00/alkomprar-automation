@@ -7,7 +7,7 @@ public class NuestrasTiendasPage {
 	public static final Target CITIES_MENU = Target.the("Filtro Menu").locatedBy("//ul[@class='cities-menu']");
     public static final Target TIENDA_CARD = Target.the("Obteniendo Tienda {0}").locatedBy("//a[@title='{0}'][@class='click']");
     public static final Target TIENDA_DETALLE = Target.the("Detalle de la tienda").locatedBy("//div[@class='contenedor_tienda_detalle']");
-    public static final Target HORARIOS_DETALLE = Target.the("Horario Tienda detalle").locatedBy("//div[@class='horarios_detalle']");
-    public static final Target HORARIOS = Target.the("Horario Tienda").locatedBy("//div[@class='horarios_detalle']/p[1]/strong/text()[1]");
+    //public static final Target HORARIOS_DETALLE = Target.the("Horario Tienda detalle").locatedBy("//div[@class='horarios_detalle']");
+    public static final Target HORARIOS = Target.the("Horario Tienda").locatedBy("//span[@class='tit_horario']/text()");
     
 }
