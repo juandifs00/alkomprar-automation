@@ -22,7 +22,7 @@ public class BuscarProductos implements Task {
     }
 
     public static Performable elemento(String marca, String listType) {
-        return instrumented(BuscarProductos.class, item);
+        return instrumented(BuscarProductos.class, marca);
     }
 
     @Override
