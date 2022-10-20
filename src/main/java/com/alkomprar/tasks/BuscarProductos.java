@@ -18,7 +18,7 @@ public class BuscarProductos implements Task {
 
     public BuscarProductos(String marca, String listType) {
         this.marca = marca;
-        this.marca = listType;
+        this.listType = listType;
     }
 
     public static Performable elemento(String marca, String listType) {
