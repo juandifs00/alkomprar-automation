@@ -31,22 +31,24 @@ public class FilterItemStepDefinitions {
     public void debeVerLaListaHastaConItems(int maxItem) {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(FILTERED_ITEMS, isVisible()),
-                Ensure.that(FILTERED_ITEMS).values().hasSizeLessThan(maxItem)
+                Ensure.that(FILTERED_ITEMS).values().hasSizeLessThanOrEqualTo(maxItem)
         );
     }
 
 
     @Cuando("{string} quiere buscar productos {string} y ordenarlos en un {string}")
-    public void quiereBuscarProductosYOrdenarlosEnUn(String actor, String item) {
+    public void quiereBuscarProductosYOrdenarlosEnUn(String actor, String marca, String listType) {
         theActorCalled(actor).attemptsTo(
                 Open.url("https://www.alkosto.com/"),
-                BuscarProductos.elemento(item)
+                BuscarProductos.elemento(marca, listType)
         );
     }
     @Entonces("debe ver una lista con productos en estilo {string}")
-    public void debeVerUnaListaConProductosEnEstilo(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void debeVerUnaListaConProductosEnEstilo(String listType) {
+        theActorInTheSpotlight().attemptsTo(
+                WaitUntil.the(FILTERED_ITEMS, isVisible()),
+                Ensure.that(LIST_CATEGORY_ITEMS.of(listType)).values().hasSizeGreaterThan(0)
+        );
     }
 
 

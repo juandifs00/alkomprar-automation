@@ -13,13 +13,15 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class BuscarProductos implements Task {
-    private String item;
+    private String marca;
+    private String listType;
 
-    public BuscarProductos(String item) {
-        this.item = item;
+    public BuscarProductos(String marca, String listType) {
+        this.marca = marca;
+        this.marca = listType;
     }
 
-    public static Performable elemento(String item) {
+    public static Performable elemento(String marca, String listType) {
         return instrumented(BuscarProductos.class, item);
     }
 
@@ -29,7 +31,10 @@ public class BuscarProductos implements Task {
         actor.attemptsTo(
                 Type.theValue(item).into(TXT_BUSCAR),
                 DoubleClick.on(TXT_BUSCAR),
-                Hit.the(Keys.ENTER).into(TXT_BUSCAR)
+                Hit.the(Keys.ENTER).into(TXT_BUSCAR),
+                WaitUntil.the(LIST_CATEGORY.of(listType), isVisible()),
+                Scroll.to(LIST_CATEGORY.of(listType)).andAlignToTop(),
+                JavaScriptClick.on(LIST_CATEGORY.of(listType))
         );
 
     }
