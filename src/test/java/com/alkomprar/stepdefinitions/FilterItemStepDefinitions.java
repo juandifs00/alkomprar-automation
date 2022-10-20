@@ -64,7 +64,7 @@ public class FilterItemStepDefinitions {
     @Entonces("debe ver los horarios de atencion de {string}")
     public void debeVerLosHorariosDeAtencion(String horario) {
         theActorInTheSpotlight().attemptsTo(
-            Ensure.that(HORARIOS).value().text().isNotEmpty()
+            Ensure.that(HORARIOS).text().isNotEmpty()
         );
     }
 
