@@ -14,7 +14,7 @@ public class MenuPage {
 	public static final Target FILTER_BAR = Target.the("Filtros para la categoria {0}").locatedBy("//div[@class='facet-container__list']");
 	public static final Target SELECT_CHECK_BOX = Target.the("Seleccionar Comprar por {0} valor: {1}").locatedBy("//*[@for='chk_{0}_{1}']");
 	public static final Target FILTERED_ITEMS = Target.the("{0} Items filtrados").locatedBy("//ul[@class='product__listing product__list']/li");
-	public static final Target LIST_CATEGORY = Target.the("Items listados como un {0}").locatedBy("//li[contains(concat(' ',normalize-space(@class),' '),' js-category-{0} ')]']");
+	public static final Target LIST_CATEGORY = Target.the("Items listados como un {0}").locatedBy("//li[contains(concat(' ',normalize-space(@class),' '),' js-category-{0} ')]");
 	public static final Target LIST_CATEGORY_ITEMS = Target.the("Items filtrados").locatedBy("//ul[@class='product__listing product__grid']/li");
 }
  
