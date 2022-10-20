@@ -10,6 +10,7 @@ import org.openqa.selenium.Keys;
 
 import static com.alkomprar.userinterfaces.MenuPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class BuscarProductos implements Task {

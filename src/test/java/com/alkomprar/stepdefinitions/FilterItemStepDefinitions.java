@@ -12,8 +12,7 @@ import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static com.alkomprar.userinterfaces.CarritoPage.ARTICULOS_CARRITO;
-import static com.alkomprar.userinterfaces.MenuPage.CARRITO;
-import static com.alkomprar.userinterfaces.MenuPage.FILTERED_ITEMS;
+import static com.alkomprar.userinterfaces.MenuPage.*;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
