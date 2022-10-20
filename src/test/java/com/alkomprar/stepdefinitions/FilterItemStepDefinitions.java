@@ -64,7 +64,6 @@ public class FilterItemStepDefinitions {
     @Entonces("debe ver los horarios de atencion de {string}")
     public void debeVerLosHorariosDeAtencion(String horario) {
         theActorInTheSpotlight().attemptsTo(
-            WaitUntil.the(TIENDA_DETALLE, isVisible()),
             Ensure.that(HORARIOS).value().isEqualTo(horario)
         );
     }
