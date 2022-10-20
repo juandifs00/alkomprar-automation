@@ -16,5 +16,7 @@ public class MenuPage {
 	public static final Target FILTERED_ITEMS = Target.the("{0} Items filtrados").locatedBy("//ul[@class='product__listing product__list']/li");
 	public static final Target LIST_CATEGORY = Target.the("Items listados como un {0}").locatedBy("//li[contains(concat(' ',normalize-space(@class),' '),' js-category-{0} ')]");
 	public static final Target LIST_CATEGORY_ITEMS = Target.the("Items filtrados").locatedBy("//ul[@class='product__listing product__grid']/li");
+	public static final Target LOCATIONS = Target.the("Localidades disponibles").locatedBy("//span[contains(text(), 'Nuestras tiendas')]");
+	public static final Target ADDRESS = Target.the("Direcciones disponibles").locatedBy("//div[@class =  'store']");
 }
  

@@ -45,16 +45,17 @@ public class FilterItemStepDefinitions {
     @Entonces("debe ver una lista con productos en estilo {string}")
     public void debeVerUnaListaConProductosEnEstilo(String listType) {
         theActorInTheSpotlight().attemptsTo(
-                WaitUntil.the(FILTERED_ITEMS, isVisible()),
                 Ensure.that(LIST_CATEGORY_ITEMS.of(listType)).values().hasSizeGreaterThan(0)
         );
     }
 
 
     @Cuando("{string} quiere Buscar los horarios de atencion en el {string} en {string}")
-    public void quiereBuscarLosHorariosDeAtencionEnElEn(String string, String string2, String string3) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void quiereBuscarLosHorariosDeAtencionEnElEn(String actor, String tiendas) {
+        theActorCalled(actor).attemptsTo(
+                Open.url("https://www.alkosto.com/"),
+                BuscarHorarios.elemento(tiendas)
+        );
     }
     @Entonces("debe ver los horarios de atencion")
     public void debeVerLosHorariosDeAtencion() {

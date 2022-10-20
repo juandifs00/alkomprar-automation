@@ -37,6 +37,5 @@ public class BuscarProductos implements Task {
                 WaitUntil.the(LIST_CATEGORY.of(listType), isClickable()),
                 JavaScriptClick.on(LIST_CATEGORY.of(listType))
         );
-
     }
 }
