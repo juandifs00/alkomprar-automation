@@ -21,7 +21,6 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 
 public class FilterItemStepDefinitions {
 
-    /*
     @Cuando("{string} quiere encontrar {string} {string} con {string} de {string}")
     public void quiereEncontrarConDe(String actor, String categoria, String marca, String valorCaracteristica, String caracteristica) {
         theActorCalled(actor).attemptsTo(
@@ -52,7 +51,6 @@ public class FilterItemStepDefinitions {
         );
     }
 
-     */
 
     @Cuando("{string} quiere Buscar los horarios de atencion en el {string} en {string}")
     public void quiereBuscarLosHorariosDeAtencionEnElEn(String actor, String tienda, String ciudad) {
@@ -61,11 +59,10 @@ public class FilterItemStepDefinitions {
                 BuscarHorarios.elemento(tienda, ciudad)
         );
     }
-    @Entonces("debe ver los horarios de atencion de {string}")
-    public void debeVerLosHorariosDeAtencion(String horario) {
+    @Entonces("debe ver los horarios de atencion")
+    public void debeVerLosHorariosDeAtencion() {
         theActorInTheSpotlight().attemptsTo(
             Ensure.that(HORARIOS).text().isNotEmpty()
         );
     }
-
 }
