@@ -29,7 +29,7 @@ public class BuscarProductos implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
-                Type.theValue(item).into(TXT_BUSCAR),
+                Type.theValue(marca).into(TXT_BUSCAR),
                 DoubleClick.on(TXT_BUSCAR),
                 Hit.the(Keys.ENTER).into(TXT_BUSCAR),
                 WaitUntil.the(LIST_CATEGORY.of(listType), isVisible()),
