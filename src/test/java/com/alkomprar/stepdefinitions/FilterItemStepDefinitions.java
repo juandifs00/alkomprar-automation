@@ -59,10 +59,12 @@ public class FilterItemStepDefinitions {
                 BuscarHorarios.elemento(tienda, ciudad)
         );
     }
-    @Entonces("debe ver los horarios de atencion")
-    public void debeVerLosHorariosDeAtencion() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Entonces("debe ver los horarios de atencion de {string}")
+    public void debeVerLosHorariosDeAtencion(String horario) {
+        theActorInTheSpotlight().attemptsTo(
+            WaitUntil.the(TIENDA_DETALLE, isVisible()),
+            Ensure.that(HORARIOS).contains(horario)
+        );
     }
 
 }

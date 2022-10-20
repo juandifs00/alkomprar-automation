@@ -14,4 +14,4 @@ Característica: Filter Items
 
   Escenario: Buscar horarios de atencion de una tienda Alkosto
     Cuando "Rodolfo" quiere Buscar los horarios de atencion en el "Alkosto Avenida 68 - Bogotá" en "bogota"
-    Entonces debe ver los horarios de atencion
+    Entonces debe ver los horarios de atencion de "Lun a Vie"
