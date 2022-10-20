@@ -13,6 +13,8 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static com.alkomprar.userinterfaces.CarritoPage.ARTICULOS_CARRITO;
 import static com.alkomprar.userinterfaces.MenuPage.*;
+import static com.alkomprar.userinterfaces.NuestrasTiendasPage.HORARIOS;
+import static com.alkomprar.userinterfaces.NuestrasTiendasPage.TIENDA_DETALLE;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
