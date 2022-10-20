@@ -9,6 +9,8 @@ import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static com.alkomprar.userinterfaces.MenuPage.*;
+import static com.alkomprar.userinterfaces.NuestrasTiendasPage.CITIES_MENU;
+import static com.alkomprar.userinterfaces.NuestrasTiendasPage.FILTRO_CIUDADES;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
