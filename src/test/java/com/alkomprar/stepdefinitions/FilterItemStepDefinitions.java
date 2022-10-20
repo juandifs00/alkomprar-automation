@@ -66,7 +66,7 @@ public class FilterItemStepDefinitions {
         System.out.print(result);
         theActorInTheSpotlight().attemptsTo(
             WaitUntil.the(TIENDA_DETALLE, isVisible()),
-            Ensure.that(HORARIOS).values().isEqualTo(horario)
+            Ensure.that(HORARIOS).value().isEqualTo(horario)
         );
     }
 
